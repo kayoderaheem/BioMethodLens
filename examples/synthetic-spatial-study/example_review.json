@@ -1,0 +1,34 @@
+{
+  "reviewer_id": "spatial_omics",
+  "paper_id": "synthetic-spatial-study",
+  "status": "ok",
+  "scope_summary": "Spatial dependence, graph construction, and validation units were assessed.",
+  "findings": [
+    {
+      "id": "SPATIAL_OMICS-001",
+      "title": "Random spot splits may leak spatial neighborhood information",
+      "category": "spatial leakage",
+      "severity": "major",
+      "confidence": "high",
+      "assessment": "partially_supported",
+      "claim": "Held-out spots constitute an independent test set.",
+      "location": "Methods, Model development",
+      "evidence": [
+        {
+          "source_type": "manuscript",
+          "locator": "Methods, Model development",
+          "excerpt": "Spots were randomly assigned to training and testing sets.",
+          "note": "The split is defined at spot rather than patient or section level.",
+          "url": null
+        }
+      ],
+      "rationale": "Adjacent spots from the same section can share local biology, morphology, and graph context across folds.",
+      "impact": "The reported AUROC may overestimate transfer to unseen tissue sections or patients.",
+      "recommendation": "Report leave-section-out and leave-patient-out validation, with a spatially blocked sensitivity analysis.",
+      "verification_status": "verified"
+    }
+  ],
+  "limitations": [
+    "This result was created from a fictional teaching example and is not a review of a real manuscript."
+  ]
+}

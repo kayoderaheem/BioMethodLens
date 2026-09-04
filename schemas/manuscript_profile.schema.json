@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BioMethodLens manuscript profile",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "modalities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "study_types": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "domains": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "required": ["modalities", "study_types", "domains"]
+}

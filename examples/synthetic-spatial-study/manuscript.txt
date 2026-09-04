@@ -1,0 +1,33 @@
+Synthetic example — not a real study and not suitable for scientific citation
+
+Title: Spatial prediction of treatment response from tumor transcriptomics
+
+Abstract
+
+We developed a machine-learning model to predict treatment response from spatial transcriptomics profiles. The model achieved an AUROC of 0.94 under five-fold cross-validation and outperformed two baseline classifiers. We conclude that the model generalizes to new patients and identifies a resistance-associated spatial program.
+
+Methods
+
+Cohort and assay
+
+Tumor tissue was collected from six patients. Two sections were obtained from each patient and processed using a fictional spatial transcriptomics assay. After quality control, 8,420 tissue spots were retained. Spots with fewer than 300 detected genes were removed. Expression values were library-size normalized, log transformed, and pooled across sections. The reference genome and annotation release were not recorded in this synthetic example.
+
+Model development
+
+Highly variable genes were selected once from the pooled expression matrix. A neural-network classifier was tuned using the pooled dataset. We evaluated performance using random five-fold cross-validation across tissue spots. Spots were randomly assigned to training and testing sets. The manuscript does not state whether spots from the same patient or section were kept in one fold. Two baseline classifiers were run with default parameters. AUROC was the primary metric; AUPRC, calibration, confidence intervals, and an external validation cohort were not reported.
+
+Spatial analysis
+
+Each spot was connected to its six nearest neighbors using Euclidean tissue coordinates. Neighborhood radius sensitivity was not evaluated. Moran's I was calculated for model predictions, but the permutation scheme and treatment of section boundaries were not described. A resistance-associated gene program was derived from features with the largest model weights and tested for pathway enrichment using the same study data.
+
+Results
+
+The model achieved an AUROC of 0.94. Baseline AUROCs were 0.78 and 0.75. Performance was reported over spots rather than patients. A UMAP showed separation between predicted responders and non-responders. The resistance program was enriched for hypoxia-related genes. No orthogonal functional experiment was performed.
+
+Discussion
+
+The results demonstrate that the model generalizes to unseen patients and that the resistance program causes treatment failure. Future studies will validate these conclusions in an independent cohort.
+
+Data and code availability
+
+Because this manuscript is synthetic, no real accession, code repository, environment file, or patient data exists.

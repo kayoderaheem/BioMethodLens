@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use BioMethodLens, please cite this software."
+title: "BioMethodLens: Evidence-linked specialist review for bioinformatics manuscripts"
+type: software
+authors:
+  - family-names: Raheem
+    given-names: Kayode
+repository-code: "https://github.com/kayoderaheem/BioMethodLens"
+url: "https://github.com/kayoderaheem/BioMethodLens"
+version: 0.1.0
+date-released: 2026-09-04
+license: MIT
+keywords:
+  - bioinformatics
+  - manuscript review
+  - reproducibility
+  - omics

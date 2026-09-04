@@ -1,0 +1,19 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+htmlcov/
+.ruff_cache/
+dist/
+build/
+
+# Manuscripts, model outputs, and runtime artifacts stay local.
+inputs/*
+!inputs/.gitkeep
+runs/*
+!runs/.gitkeep
+work/*
+!work/.gitkeep

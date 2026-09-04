@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "reviewers": [
+    {
+      "id": "study_design",
+      "display_name": "Study Design Lens",
+      "description": "Cohorts, controls, experimental units, replication, eligibility, and bias.",
+      "prompt": "study_design.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["cohort", "control", "replicate", "inclusion criteria", "exclusion criteria"],
+      "priority": 10
+    },
+    {
+      "id": "data_provenance",
+      "display_name": "Data Provenance Lens",
+      "description": "Sample flow, accession identifiers, unit tracking, consent, and dataset lineage.",
+      "prompt": "data_provenance.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["accession", "dataset", "samples", "patients", "donors"],
+      "priority": 20
+    },
+    {
+      "id": "statistical_inference",
+      "display_name": "Statistical Inference Lens",
+      "description": "Experimental units, uncertainty, assumptions, multiplicity, effect sizes, and power.",
+      "prompt": "statistical_inference.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["p-value", "confidence interval", "multiple testing", "effect size", "statistical"],
+      "priority": 30
+    },
+    {
+      "id": "reproducibility",
+      "display_name": "Reproducibility Lens",
+      "description": "Code, versions, environments, parameters, seeds, workflows, and data access.",
+      "prompt": "reproducibility.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["github", "code availability", "software version", "random seed", "container"],
+      "priority": 40
+    },
+    {
+      "id": "claim_evidence",
+      "display_name": "Claim–Evidence Lens",
+      "description": "Alignment among stated claims, results, uncertainty, and study scope.",
+      "prompt": "claim_evidence.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["conclude", "demonstrate", "significantly", "novel", "causes"],
+      "priority": 50
+    },
+    {
+      "id": "biological_interpretation",
+      "display_name": "Biological Interpretation Lens",
+      "description": "Biological plausibility, causal restraint, pathway interpretation, and validation.",
+      "prompt": "biological_interpretation.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["pathway", "mechanism", "biological", "validation", "functional"],
+      "priority": 60
+    },
+    {
+      "id": "figures_reporting",
+      "display_name": "Figures and Reporting Lens",
+      "description": "Figure integrity, denominators, uncertainty, legends, labels, and accessibility.",
+      "prompt": "figures_reporting.md",
+      "mandatory": true,
+      "modalities": [],
+      "study_types": [],
+      "keywords": ["figure", "heatmap", "violin plot", "umap", "supplementary"],
+      "priority": 70
+    },
+    {
+      "id": "omics_qc",
+      "display_name": "Omics Quality-Control Lens",
+      "description": "Raw-data QC, filtering, normalization, technical artifacts, and reference builds.",
+      "prompt": "omics_qc.md",
+      "mandatory": false,
+      "modalities": ["genomics", "bulk-rna-seq", "scrna-seq", "single-cell-atac", "spatial-transcriptomics", "proteomics", "metabolomics", "multiomics"],
+      "study_types": [],
+      "keywords": ["quality control", "normalization", "read depth", "mapping rate", "feature filtering", "reference genome"],
+      "priority": 100
+    },
+    {
+      "id": "batch_integration",
+      "display_name": "Batch and Integration Lens",
+      "description": "Batch effects, confounding, harmonization, overcorrection, and biological signal preservation.",
+      "prompt": "batch_integration.md",
+      "mandatory": false,
+      "modalities": ["bulk-rna-seq", "scrna-seq", "single-cell-atac", "spatial-transcriptomics", "proteomics", "metabolomics", "multiomics"],
+      "study_types": [],
+      "keywords": ["batch effect", "integration", "combat", "harmony", "scvi", "anchor"],
+      "priority": 110
+    },
+    {
+      "id": "ml_validation",
+      "display_name": "Machine-Learning Validation Lens",
+      "description": "Leakage, grouped splitting, nested validation, calibration, uncertainty, and shift.",
+      "prompt": "ml_validation.md",
+      "mandatory": false,
+      "modalities": [],
+      "study_types": ["prediction", "classification", "regression", "representation-learning"],
+      "keywords": ["machine learning", "cross-validation", "training set", "test set", "deep learning", "classifier", "auroc"],
+      "priority": 120
+    },
+    {
+      "id": "benchmarking",
+      "display_name": "Benchmarking Lens",
+      "description": "Baseline fairness, metric choice, tuning budgets, statistical comparisons, and ablations.",
+      "prompt": "benchmarking.md",
+      "mandatory": false,
+      "modalities": [],
+      "study_types": ["prediction", "benchmarking", "method-development"],
+      "keywords": ["benchmark", "baseline", "state-of-the-art", "ablation", "auprc", "comparison"],
+      "priority": 130
+    },
+    {
+      "id": "single_cell",
+      "display_name": "Single-Cell Lens",
+      "description": "Cell QC, doublets, ambient signal, annotation, pseudobulk inference, and donor replication.",
+      "prompt": "single_cell.md",
+      "mandatory": false,
+      "modalities": ["scrna-seq", "single-cell-atac", "cite-seq"],
+      "study_types": [],
+      "keywords": ["single-cell", "single cell", "scrna-seq", "doublet", "pseudobulk", "cell type annotation"],
+      "priority": 140
+    },
+    {
+      "id": "spatial_omics",
+      "display_name": "Spatial Omics Lens",
+      "description": "Spatial autocorrelation, graph construction, field-of-view structure, leakage, and tissue boundaries.",
+      "prompt": "spatial_omics.md",
+      "mandatory": false,
+      "modalities": ["spatial-transcriptomics", "spatial-proteomics"],
+      "study_types": [],
+      "keywords": ["spatial transcriptomics", "spatial omics", "visium", "xenium", "cosmx", "merfish", "moran's i", "neighborhood graph"],
+      "priority": 150
+    },
+    {
+      "id": "bulk_transcriptomics",
+      "display_name": "Bulk Transcriptomics Lens",
+      "description": "Library design, normalization, covariates, differential expression, and compositional confounding.",
+      "prompt": "bulk_transcriptomics.md",
+      "mandatory": false,
+      "modalities": ["bulk-rna-seq", "microarray"],
+      "study_types": ["differential-expression"],
+      "keywords": ["bulk rna-seq", "deseq2", "edger", "limma", "differential expression", "counts per million"],
+      "priority": 160
+    },
+    {
+      "id": "multiomics",
+      "display_name": "Multi-Omics Lens",
+      "description": "Modality alignment, missingness, scale compatibility, integration assumptions, and validation.",
+      "prompt": "multiomics.md",
+      "mandatory": false,
+      "modalities": ["multiomics", "proteogenomics", "cite-seq"],
+      "study_types": [],
+      "keywords": ["multi-omics", "multiomics", "multimodal", "data integration", "joint embedding", "modality"],
+      "priority": 170
+    },
+    {
+      "id": "survival_analysis",
+      "display_name": "Survival Analysis Lens",
+      "description": "Censoring, time origin, proportional hazards, events per parameter, and validation.",
+      "prompt": "survival_analysis.md",
+      "mandatory": false,
+      "modalities": [],
+      "study_types": ["survival", "prognostic"],
+      "keywords": ["survival", "cox", "kaplan-meier", "hazard ratio", "censoring", "prognostic"],
+      "priority": 180
+    },
+    {
+      "id": "clinical_prediction",
+      "display_name": "Clinical Prediction Lens",
+      "description": "Clinical utility, calibration, transportability, missing data, comparators, and reporting.",
+      "prompt": "clinical_prediction.md",
+      "mandatory": false,
+      "modalities": [],
+      "study_types": ["prediction", "diagnostic", "prognostic", "clinical-validation"],
+      "keywords": ["clinical prediction", "diagnostic", "prognostic", "calibration", "decision curve", "external validation"],
+      "priority": 190
+    },
+    {
+      "id": "reporting_guidelines",
+      "display_name": "Reporting-Guideline Lens",
+      "description": "Study-type reporting completeness using explicitly relevant biomedical guidelines.",
+      "prompt": "reporting_guidelines.md",
+      "mandatory": false,
+      "modalities": ["genomics", "bulk-rna-seq", "scrna-seq", "spatial-transcriptomics", "proteomics", "multiomics"],
+      "study_types": ["prediction", "diagnostic", "clinical-validation"],
+      "keywords": ["tripod", "stard", "consort-ai", "miame", "minseqe", "reporting guideline"],
+      "priority": 200
+    }
+  ]
+}

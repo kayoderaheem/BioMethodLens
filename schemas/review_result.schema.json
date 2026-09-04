@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kayoderaheem/BioMethodLens/schemas/review_result.schema.json",
+  "title": "BioMethodLens specialist review result",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "reviewer_id": {"type": "string", "minLength": 1},
+    "paper_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["ok", "partial", "cannot_verify", "failed"]},
+    "scope_summary": {"type": "string", "minLength": 1},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "category": {"type": "string", "minLength": 1},
+          "severity": {"type": "string", "enum": ["critical", "major", "moderate", "minor"]},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "assessment": {"type": "string", "enum": ["supported", "partially_supported", "unsupported", "cannot_verify"]},
+          "claim": {"type": "string"},
+          "location": {"type": "string"},
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "source_type": {"type": "string", "enum": ["manuscript", "external", "calculation", "data_artifact"]},
+                "locator": {"type": "string", "minLength": 1},
+                "excerpt": {"type": "string"},
+                "note": {"type": "string"},
+                "url": {"type": ["string", "null"]}
+              },
+              "required": ["source_type", "locator", "excerpt", "note", "url"]
+            }
+          },
+          "rationale": {"type": "string", "minLength": 1},
+          "impact": {"type": "string", "minLength": 1},
+          "recommendation": {"type": "string", "minLength": 1},
+          "verification_status": {"type": "string", "enum": ["verified", "cannot_verify", "not_applicable"]}
+        },
+        "required": ["id", "title", "category", "severity", "confidence", "assessment", "claim", "location", "evidence", "rationale", "impact", "recommendation", "verification_status"]
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["reviewer_id", "paper_id", "status", "scope_summary", "findings", "limitations"]
+}

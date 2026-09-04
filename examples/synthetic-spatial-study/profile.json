@@ -1,0 +1,5 @@
+{
+  "modalities": ["spatial-transcriptomics"],
+  "study_types": ["prediction", "benchmarking"],
+  "domains": ["cancer-biology", "pharmacogenomics"]
+}

@@ -1,0 +1,6 @@
+include README.md LICENSE CITATION.cff
+recursive-include config *.json
+recursive-include schemas *.json
+recursive-include prompts *.md
+recursive-include docs *.md
+recursive-include examples *.md *.txt *.json
